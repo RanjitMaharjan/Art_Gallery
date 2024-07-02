@@ -1,3 +1,5 @@
+// responsive nav bar starts
+
 document.addEventListener("DOMContentLoaded", function () {
     const menuToggle = document.querySelector('.menu_toggle');
     const openIcon = document.querySelector('.open_icon');
@@ -11,3 +13,18 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+// responsive nav bar ends
+
+// popup image js starts
+
+document.querySelectorAll('.image_gallery img').forEach(image => {
+    image.onclick = () => {
+        document.querySelector('.popup_image').style.display = 'block';
+        document.querySelector('.popup_image img').src = image.getAttribute('src');
+    }
+});
+document.querySelector('.popup_image span').onclick = () => {
+    document.querySelector('.popup_image').style.display = 'none';
+}
+
+// popup image js end

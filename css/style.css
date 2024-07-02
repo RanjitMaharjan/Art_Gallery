@@ -23,13 +23,18 @@ li {
 .container {
     width: 80%;
     margin: auto;
-
 }
 
 section {
     margin-top: 50px;
     padding: 50px 0;
     /* background-color: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)); */
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    color: #362C28;
 }
 
 /* navbar css :start */
@@ -39,7 +44,6 @@ section {
     display: flex;
     justify-content: center;
 }
-
 
 .nav {
     position: fixed;
@@ -177,11 +181,55 @@ section {
 }
 
 .header-content {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/bg11.jpg");
     height: 100vh;
+    width: 100%;
     background-size: cover;
     background-position: center;
+    animation: animate 16s ease-in-out infinite;
 }
+
+@keyframes animate {
+
+    0%,
+    100% {
+        background-image: linear-gradient(rgba(58, 25, 25, 0.5), rgba(119, 24, 24, 0.5)), url("../images/bg11.jpg");
+    }
+
+    35% {
+        background-image: linear-gradient(rgba(58, 25, 25, 0.5), rgba(119, 24, 24, 0.5)), url("../images/bg12.jpg");
+    }
+
+    65% {
+        background-image: linear-gradient(rgba(58, 25, 25, 0.5), rgba(119, 24, 24, 0.5)), url("../images/canva4.jpg");
+    }
+}
+
+.header-contents {
+    position: absolute;
+    top: 70%;
+    left: 20%;
+    right: 20%;
+    align-items: center;
+    color: wheat;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+    padding: 20px 30px;
+    border-radius: 20px;
+}
+
+.header-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header-title span {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 800;
+}
+
+
 
 /* #owl-demo .item img {
     display: block;
@@ -253,7 +301,213 @@ section {
     transition: all 0.3s ease-in-out;
 }
 
-social icons css ends
+/* social icons css ends */
+
+/* image gallerycss */
+
+.gallery_content {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    margin-top: 30px;
+    column-gap: 30px;
+}
+
+.image_gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    column-gap: 10px;
+    row-gap: 10px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.image_text {
+    text-align: center;
+}
+
+.image_text p {
+    margin: 20px 0;
+}
+
+.image_text .img_btn {
+    color: rgb(207, 66, 66);
+    border: none;
+    background-color: #362c28;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.17) 0 -23px 25px 0 inset, rgba(0, 0, 0, 0.15) 0 -36px 30px 0 inset, rgba(0, 0, 0, 0.1) 0 -79px 40px 0 inset, rgba(0, 0, 0, 0.06) 0 2px 1px, rgba(0, 0, 0, 0.09) 0 4px 2px, rgba(0, 0, 0, 0.09) 0 8px 4px, rgba(0, 0, 0, 0.09) 0 16px 8px, rgba(0, 0, 0, 0.09) 0 32px 16px;
+}
+
+.image_text .img_btn:hover {
+    color: whitesmoke;
+}
+
+.image_text .img_btn::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    display: block;
+    background-color: red;
+    border-radius: 20px;
+    opacity: 0;
+    top: 14px;
+    right: -20px;
+}
+
+.image_text .img_btn:hover::after {
+    width: 100%;
+    transition: all 0.5s ease-in-out;
+    opacity: 1;
+    right: 10px;
+}
+
+.image_text .img_btn:active {
+    color: rgb(207, 66, 66);
+    background-color: whitesmoke;
+}
+
+
+.image_gallery .image {
+    /* height: 150px; */
+    overflow: hidden;
+}
+
+.image_gallery .image img {
+    /* height: 150; */
+    width: 100%;
+    object-fit: cover;
+    transition: .5s ease-in-out;
+}
+
+.image_gallery .image:hover img {
+    transform: scale(1.05);
+}
+
+.gallery .popup_image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(5px);
+    height: 100%;
+    width: 100%;
+    z-index: 11;
+    display: none;
+}
+
+.gallery .popup_image span {
+    position: absolute;
+    top: 0;
+    right: 10%;
+    font-size: 40px;
+    font-weight: bolder;
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+.gallery .popup_image img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    /* height: 500px; */
+    object-fit: cover;
+    border: whitesmoke double 15px;
+}
+
+/* imaage gallery css ends */
+
+/* PRODUCT CSS STATS */
+
+.products_section {
+    background-image: linear-gradient(rgba(58, 25, 25, 0.5), rgba(119, 24, 24, 0.5)), url("../images/back11.jpg");
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.products_section .title {
+    color: whitesmoke;
+}
+
+.product_cards {
+    display: grid;
+    /* grid-template-columns: auto auto auto; */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    column-gap: 30px;
+    row-gap: 30px;
+    overflow: hidden;
+    justify-content: space-between;
+    align-content: center;
+    margin-top: 30px;
+}
+
+.product_card {
+    background-color: #fff;
+    padding: 10px;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px, rgba(0, 0, 0, 0.3) 0 7px 13px -3px, rgba(0, 0, 0, 0.2) 0 -3px 0 inset;
+
+}
+
+.pro_img {
+    box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.25);
+    width: 100%;
+    border-radius: 20px;
+}
+
+.product_text {
+    text-align: center;
+}
+
+.product_text p {
+    margin: 10px;
+}
+
+.product_text span {
+    font-weight: 800;
+}
+
+.product_btns {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px 0;
+}
+
+.product_btn {
+    color: rgb(207, 66, 66);
+    border: none;
+    background-color: #362c28;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.17) 0 -23px 25px 0 inset, rgba(0, 0, 0, 0.15) 0 -36px 30px 0 inset, rgba(0, 0, 0, 0.1) 0 -79px 40px 0 inset, rgba(0, 0, 0, 0.06) 0 2px 1px, rgba(0, 0, 0, 0.09) 0 4px 2px, rgba(0, 0, 0, 0.09) 0 8px 4px, rgba(0, 0, 0, 0.09) 0 16px 8px, rgba(0, 0, 0, 0.09) 0 32px 16px;
+}
+
+.product_btn:hover {
+    color: whitesmoke;
+}
+
+.product_btn:active {
+    color: rgb(207, 66, 66);
+    background-color: whitesmoke;
+}
+
+/* PRODUCT CSS ENDS */
+
+/* mansonary css :start */
+
+
+/* mansonary css :end */
 
 /* footer css :start */
 footer {
@@ -326,12 +580,7 @@ footer {
 /* footer css :end */
 
 /* Responsive styles */
-@media (max-width: 768px) {
-
-    section {
-        margin-top: 30px;
-        padding: 30px 0;
-    }
+@media (max-width: 1024px) {
 
     .nav {
         flex-direction: row;
@@ -392,6 +641,46 @@ footer {
         font-size: 30px;
         color: whitesmoke;
         margin-right: 20px;
+    }
+
+    .gallery_content {
+        grid-template-columns: 1fr;
+        row-gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    section {
+        margin-top: 30px;
+        padding: 30px 0;
+    }
+
+    .header-contents {
+        position: absolute;
+        top: 70%;
+        left: 10%;
+        right: 10%;
+        /* padding: 10px 20px; */
+        padding: 5px;
+    }
+
+    .header-title h1 {
+        font-size: 1.5rem;
+    }
+
+    .header-title span {
+        font-size: 0.85rem;
+    }
+
+
+    .product_btn {
+        font-size: 12px;
+    }
+
+
+    .gallery .popup_image img {
+        width: 85%;
     }
 }
 

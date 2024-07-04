@@ -28,3 +28,34 @@ document.querySelector('.popup_image span').onclick = () => {
 }
 
 // popup image js end
+
+
+// carosol js starts
+
+$(document).ready(function () {
+    $('.owl-carousel').owlCarousel({
+        loop: true,
+        margin: 10,
+        autoplay: true,
+        autoplayTimeout: 3000,
+        nav: true,
+        responsive: {
+            0: {
+                items: 1,
+                nav: false,
+                dots: false
+            },
+            600: {
+                items: 2
+            },
+            900: {
+                items: 3
+            },
+            1300: {
+                items: 4
+            }
+        }
+    });
+});
+
+// carosol js ends

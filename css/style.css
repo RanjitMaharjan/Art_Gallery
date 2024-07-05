@@ -59,6 +59,19 @@ section {
 
 /* navbar css :start */
 
+.headers {
+    position: relative;
+}
+
+.headers #dotsCanvas {
+    position: absolute;
+    background-color: transparent;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
 
 .navbar {
     display: flex;
@@ -135,7 +148,7 @@ section {
 }
 
 .nav_items ul li a:hover {
-    color: rgb(207, 66, 66);
+    /* color: rgb(207, 66, 66); */
     transition: all 0.5s ease-in-out;
 }
 
@@ -349,7 +362,7 @@ section {
     margin: 20px 0;
 }
 
-.image_text .img_btn {
+.img_btn {
     color: rgb(207, 66, 66);
     border: none;
     background-color: #362c28;
@@ -362,11 +375,11 @@ section {
     box-shadow: rgba(0, 0, 0, 0.17) 0 -23px 25px 0 inset, rgba(0, 0, 0, 0.15) 0 -36px 30px 0 inset, rgba(0, 0, 0, 0.1) 0 -79px 40px 0 inset, rgba(0, 0, 0, 0.06) 0 2px 1px, rgba(0, 0, 0, 0.09) 0 4px 2px, rgba(0, 0, 0, 0.09) 0 8px 4px, rgba(0, 0, 0, 0.09) 0 16px 8px, rgba(0, 0, 0, 0.09) 0 32px 16px;
 }
 
-.image_text .img_btn:hover {
+.img_btn:hover {
     color: whitesmoke;
 }
 
-.image_text .img_btn::after {
+.img_btn::after {
     content: "";
     width: 0;
     height: 2px;
@@ -378,14 +391,14 @@ section {
     right: -20px;
 }
 
-.image_text .img_btn:hover::after {
+.img_btn:hover::after {
     width: 100%;
     transition: all 0.5s ease-in-out;
     opacity: 1;
     right: 10px;
 }
 
-.image_text .img_btn:active {
+.img_btn:active {
     color: rgb(207, 66, 66);
     background-color: whitesmoke;
 }
@@ -394,6 +407,8 @@ section {
 .image_gallery .image {
     /* height: 150px; */
     overflow: hidden;
+    box-shadow: rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px, rgba(10, 37, 64, 0.35) 0 -2px 6px 0 inset;
+    padding: 10px;
 }
 
 .image_gallery .image img {
@@ -528,6 +543,58 @@ section {
 
 /* mansonary css :start */
 
+.masonary_gallery {
+    position: relative;
+    height: 100%;
+    /* margin: auto; */
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    column-gap: 10px;
+    row-gap: 10px;
+    grid-auto-flow: dense;
+    /* grid-auto-flow: column; */
+}
+
+/* .masonary_gallery .gallery_img {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+} */
+
+.masonary_gallery .gallery_img .imgs {
+    /* height: 255px; */
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    break-inside: avoid;
+    filter: grayscale(100%);
+    border: 3px black double;
+    /* padding: 5px; */
+}
+
+.masonary_gallery .gallery_img .imgs:hover {
+    filter: grayscale(0);
+    box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+.masonary_gallery .gallery_img:nth-child(3) {
+    grid-column-start: span 1;
+    grid-row-start: span 2;
+}
+
+.masonary_gallery .gallery_img:nth-child(4) {
+    grid-column-start: span 2;
+    grid-row-start: span 2;
+}
+
+.masonary_gallery .gallery_img:nth-child(7) {
+    grid-column-start: span 2;
+    grid-row-start: span 2;
+}
 
 /* mansonary css :end */
 
@@ -550,7 +617,7 @@ section {
 }
 
 .blog_card {
-    box-shadow: rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px, rgba(10, 37, 64, 0.35) 0 -2px 6px 0px inset;
+    box-shadow: rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px, rgba(10, 37, 64, 0.35) 0 -2px 6px 0 inset;
     background-color: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(10px);
     padding: 5px;
@@ -575,9 +642,7 @@ section {
 
 .owl-nav button {
     position: absolute;
-    /* top: 50%; */
     transform: translateY(-50%);
-    /* background: rgba(255, 255, 255, 0.38) !important; */
     color: #2c1717;
     margin: 0;
     transition: all 0.3s ease-in-out;
@@ -632,6 +697,15 @@ section {
     row-gap: 15px;
 }
 
+.grid_layout_text {
+    text-align: center;
+    line-height: 30px;
+}
+
+.grid_layout_text h4 {
+    margin-bottom: 10px;
+}
+
 .grid_content {
     /* height: 150px; */
     overflow: hidden;
@@ -654,28 +728,83 @@ section {
     line-height: 30px;
     font-weight: 800;
     text-shadow: 4px 4px 6px rgba(66, 68, 90, 1);
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px, rgba(0, 0, 0, 0.3) 0 7px 13px -3px, rgba(0, 0, 0, 0.2) 0 -3px 0 inset;
 }
 
 .grid_content:nth-child(odd):hover {
     color: rgb(152, 47, 47);
     border: black 2px double;
+    transition: all 0.3s ease-in-out;
 }
 
 .grid_content:nth-child(even) {
     padding: 10px;
     filter: grayscale(100%);
     cursor: pointer;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    box-shadow: rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px, rgba(10, 37, 64, 0.35) 0 -2px 6px 0 inset;
 }
 
 .grid_content:nth-child(even):hover {
     filter: grayscale(0);
     transform: rotate(5deg);
+    transition: all 0.3s ease-in-out;
 }
 
 
 /* grid layout section css :end */
+
+/* cta css starts */
+
+.ctas {
+    margin-top: 0;
+}
+
+.cta {
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    background-image: linear-gradient(rgba(58, 25, 25, 0.5), rgba(119, 24, 24, 0.5)), url("../images/banner1.jpg");
+}
+
+.cta_content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 100px 50px;
+    color: whitesmoke;
+
+}
+
+.cta_form {
+    justify-self: end;
+}
+
+.cta_form input {
+    font-size: 20px;
+    background-color: #413d3d;
+    backdrop-filter: blur(10px);
+    color: whitesmoke;
+    border-radius: 20px;
+    padding: 5px 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px, rgba(10, 37, 64, 0.35) 0 -2px 6px 0 inset;
+}
+
+.cta_btn .fa-regular {
+    font-size: 20px;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    /* color: whitesmoke; */
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.cta_btn {
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* cta css ends */
 
 /* footer css :start */
 footer {
@@ -839,9 +968,29 @@ footer {
         row-gap: 30px;
     }
 
+    .masonary_gallery {
+        grid-template-columns: auto auto auto;
+    }
+
+
     .grid_layout {
         grid-template-columns: 1fr;
     }
+
+    .cta_content {
+        grid-template-columns: 1fr;
+        row-gap: 30px;
+        padding: 50px;
+    }
+
+    .cta_form input {
+        font-size: 16px;
+    }
+
+    .cta_btn .fa-regular {
+        font-size: 16px;
+    }
+
 }
 
 @media (max-width: 768px) {
@@ -892,7 +1041,23 @@ footer {
 
 
     .gallery .popup_image img {
-        width: 85%;
+        width: 65%;
+    }
+
+    .masonary_gallery {
+        grid-template-columns: auto auto;
+    }
+
+    .cta_form input {
+        font-size: 12px;
+    }
+
+    .cta_btn {
+        margin-top: 10px;
+    }
+
+    .cta_btn .fa-regular {
+        font-size: 12px;
     }
 }
 
